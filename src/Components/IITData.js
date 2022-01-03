@@ -2,7 +2,7 @@ import cimg from '../Images/home.svg';
 const IITData = [{
         id: 1,
         cname: "Complete Co-ordinate Geometry |JEE Mains and Advanced|",
-        cimage: { cimg },
+        cimage: cimg,
         tname: "By Kdm Sir",
         crate: "3",
         cprice: "INR 4000/-"
@@ -10,7 +10,7 @@ const IITData = [{
     {
         id: 2,
         cname: "Complete Co-ordinate Geometry |JEE Mains and Advanced|",
-        cimage: { cimg },
+        cimage: cimg,
         tname: "By Kdm Sir",
         crate: "5",
         cprice: "INR 4000/-"
@@ -18,7 +18,7 @@ const IITData = [{
     {
         id: 3,
         cname: "Complete Co-ordinate Geometry",
-        cimage: { cimg },
+        cimage: cimg,
         tname: "By Kdm Sir",
         crate: "2",
         cprice: "INR 4000/-"
@@ -26,7 +26,7 @@ const IITData = [{
     // {
     //     id: 4,
     //     cname: "Complete Co-ordinate Geometry |JEE Mains and Advanced|",
-    //     cimage: {cimg},
+    //     cimage: cimg,
     //     crate: "3",
     //     cprice: "INR 4000/-"
     // },
