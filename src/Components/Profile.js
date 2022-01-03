@@ -14,6 +14,8 @@ import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import LogoutIcon from '@mui/icons-material/Logout';
 import DraftsIcon from '@mui/icons-material/Drafts';
+import { api } from '../backend';
+
 const useStyles = makeStyles((theme) => ({
 	root: {
 		margin: "55px",
@@ -31,7 +33,7 @@ const Profile = () => {
 	useEffect(() => {
 		const callProfilePage = async () => {
 			// try {
-			const res = await fetch('/profile', {
+			const res = await fetch(`${api}/profile`, {
 				method: 'GET',
 				headers: {
 					Accept: 'application/json',

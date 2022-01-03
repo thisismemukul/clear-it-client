@@ -17,6 +17,7 @@ import Typography from '@mui/material/Typography';
 import { useNavigate } from 'react-router-dom';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { api } from '../backend';
 
 function Copyright(props) {
     return (
@@ -49,7 +50,7 @@ export default function SignUp() {
     };
 
     const signup = async (user) => {
-        return await fetch(`/register`, {
+        return await fetch(`${api}/register`, {
             method: "POST",
             headers: {
                 Accept: "application/json",

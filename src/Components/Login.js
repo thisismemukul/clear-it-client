@@ -16,6 +16,7 @@ import { useNavigate } from 'react-router-dom';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {UserContext} from "../App";
+import { api } from '../backend';
 function Copyright(props) {
 	return (
 		<Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -41,7 +42,7 @@ export default function SignIn() {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		const res = await fetch('/signin', {
+		const res = await fetch(`${api}/signin`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
