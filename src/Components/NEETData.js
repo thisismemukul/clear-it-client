@@ -1,7 +1,8 @@
+import cimg from '../Images/home.svg';
 const NEETData = [{
         id: 1,
         cname: "Complete Co-ordinate Geometry |JEE Mains and Advanced|",
-        cimage: "http://localhost:3000/static/media/home.79786be2.svg",
+        cimage: { cimg },
         tname: "By Kdm Sir",
         crate: "3",
         cprice: "INR 4000/-"
@@ -9,7 +10,7 @@ const NEETData = [{
     {
         id: 2,
         cname: "Complete Co-ordinate Geometry |JEE Mains and Advanced|",
-        cimage: "http://localhost:3000/static/media/home.79786be2.svg",
+        cimage: { cimg },
         tname: "By Kdm Sir",
         crate: "3",
         cprice: "INR 4000/-"
@@ -17,7 +18,7 @@ const NEETData = [{
     {
         id: 3,
         cname: "Complete Co-ordinate Geometry |JEE Mains and Advanced|",
-        cimage: "http://localhost:3000/static/media/home.79786be2.svg",
+        cimage: { cimg },
         tname: "By Kdm Sir",
         crate: "3",
         cprice: "INR 5/-"
@@ -25,7 +26,7 @@ const NEETData = [{
     // {
     //     id: 4,
     //     cname: "Complete Co-ordinate Geometry |JEE Mains and Advanced|",
-    //     cimage: "http://localhost:3000/static/media/home.79786be2.svg",
+    //     cimage: {cimg},
     //     crate: "3",
     //     cprice: "INR 4000/-"
     // },
