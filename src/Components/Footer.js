@@ -15,7 +15,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 
 const useStyles = makeStyles((theme) => ({
   iconcolor:{
-    color: '#FF5166',
+    color: '#ffffff',
   },
   root: {
     margin: "10px",
@@ -44,10 +44,11 @@ export default function StickyFooter() {
       sx={{
         display: 'flex',
         flexDirection: 'column',
+        color:'#ffffff'
       }}
     >
       <CssBaseline />
-      <Box sx={{ p: 3, backgroundColor: '#eeeeee' }}>
+      <Box sx={{ p: 3, backgroundColor: '#3a3838' }}>
         <Grid container spacing={2}>
           {FooterData.map((val, index) => {
             return (<>
@@ -69,7 +70,7 @@ export default function StickyFooter() {
               <img src={logo} alt="ClearIT" />
               <br />
               <br />
-              <ButtonGroup variant="text" color="secondary" aria-label="text button group">
+              <ButtonGroup variant="text" color="primary" aria-label="text button group">
                 <Button>
                   <Link href="http://www.instagram.com/clearit" className={classes.link} target="_blank" >
                     <InstagramIcon className={classes.iconcolor} />

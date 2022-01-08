@@ -23,6 +23,28 @@ const IITData = [{
         crate: "2",
         cprice: "INR 4000/-"
     },
+    {
+        id: 4,
+        cname: "Complete Co-ordinate Geometry",
+        cimage: cimg,
+        tname: "By Kdm Sir",
+        crate: "2",
+        cprice: "INR 4000/-"
+    }, {
+        id: 5,
+        cname: "Complete Co-ordinate Geometry",
+        cimage: cimg,
+        tname: "By Kdm Sir",
+        crate: "2",
+        cprice: "INR 4000/-"
+    }, {
+        id: 6,
+        cname: "Complete Co-ordinate Geometry",
+        cimage: cimg,
+        tname: "By Kdm Sir",
+        crate: "2",
+        cprice: "INR 4000/-"
+    },
     // {
     //     id: 4,
     //     cname: "Complete Co-ordinate Geometry |JEE Mains and Advanced|",

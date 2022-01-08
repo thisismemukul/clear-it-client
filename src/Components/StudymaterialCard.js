@@ -12,6 +12,13 @@ import { makeStyles } from '@mui/styles';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
+import { useTheme } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import SkipNextIcon from '@mui/icons-material/SkipNext';
+
+
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
     return <IconButton {...other} />;
@@ -25,15 +32,25 @@ const ExpandMore = styled((props) => {
 const useStyles = makeStyles((theme) => ({
     root: {
         margin: "10px",
-        display: "inline-block",
+        display: "none",
         [theme.breakpoints.down('md')]: {
             margin: "5px",
+        display: "inline-block",
+    },
+    },
+    card: {
+        margin: "20px",
+        display:"flex",
+        [theme.breakpoints.down('md')]: {
+        display: "none",
         },
     },
 }));
 
 
 const StudymaterialCard = (props) => {
+    const theme = useTheme();
+
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
 
@@ -55,17 +72,59 @@ const StudymaterialCard = (props) => {
                     <Button size="small">Download <ArrowCircleDownIcon /></Button>
                 </CardActions>
             </Card> */}
-            <Card className={classes.root} sx={{ maxWidth: 345, minHeight: 450 }}>
+            <Card className={classes.card} >
+                <CardMedia
+                    component="img"
+                    sx={{ width: 400, height: 255 }}
+                    image={props.subthumbnail}
+                    alt={props.subthumbnail}
+                />
+                <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                    <CardContent sx={{ flex: '1 0 auto' }}>
+
+                        <CardHeader
+                            avatar={
+                                <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                                    CI
+                                </Avatar>
+                            }
+
+                            title={props.type}
+                            subheader="September 14, 2016"
+                        />
+                        <Typography component="div" variant="h5">
+                            {props.sname}
+                        </Typography>
+                        <Typography variant="subtitle1" color="text.secondary" component="div">
+                            {props.lname}
+                        </Typography>
+                    </CardContent>
+                    <CardActions disableSpacing>
+                        <IconButton aria-label="add to favorites">
+                            <FavoriteIcon />
+                        </IconButton>
+                        <IconButton aria-label="share">
+                            <ShareIcon />
+                        </IconButton>
+                        <ExpandMore
+                            expand={expanded}
+                            onClick={handleExpandClick}
+                            aria-expanded={expanded}
+                            aria-label="show more"
+                        >
+                            <ChevronRightIcon />
+                        </ExpandMore>
+                    </CardActions>
+
+                </Box>
+
+            </Card>
+            <Card className={classes.root} sx={{ maxWidth: 345, minHeight: 450, }} >
                 <CardHeader
                     avatar={
                         <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
                             CI
                         </Avatar>
-                    }
-                    action={
-                        <IconButton aria-label="settings">
-                            <MoreVertIcon />
-                        </IconButton>
                     }
                     title={props.type}
                     subheader="September 14, 2016"
@@ -100,7 +159,7 @@ const StudymaterialCard = (props) => {
                         <ChevronRightIcon />
                     </ExpandMore>
                 </CardActions>
-                
+
             </Card>
         </>
     )
