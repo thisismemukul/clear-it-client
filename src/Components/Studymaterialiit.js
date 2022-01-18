@@ -23,16 +23,28 @@ const useStyles = makeStyles((theme) => ({
       margin: "3px",
     },
   },
+  side: {
+    display: "none",
+    [theme.breakpoints.down('md')]: {
+      display: "block",
+    },
+  },
+  side2: {
+    display: "block",
+    [theme.breakpoints.down('md')]: {
+      display: "none",
+    },
+  },
 }));
 
 
 const Studymaterial = () => {
   const classes = useStyles();
 
-  
+
   const [items, setItems] = React.useState(StudymaterialCardIITData);
   const [ctype, setCtype] = React.useState('All Courses');
-  
+
   const filterItem = (subname) => {
     const updatedSubjects = StudymaterialCardIITData.filter((curSub) => {
       return curSub.sname === subname
@@ -52,7 +64,7 @@ const Studymaterial = () => {
     <Button key="one" onClick={() => setItems(StudymaterialCardIITData)}>All</Button>,
     <Button key="two" onClick={() => filterItem('Physics')}>Physics</Button>,
     <Button key="three" onClick={() => filterItem('Chemistry')}>Chemistry</Button>,
-    <Button key="four" onClick={() => filterItem('Maths')}>Maths</Button>, 
+    <Button key="four" onClick={() => filterItem('Maths')}>Maths</Button>,
   ];
   const [state, setState] = React.useState({
     left: false,
@@ -111,7 +123,7 @@ const Studymaterial = () => {
         <Box sx={{ mt: 3, p: 3, minHeight: '100vh' }}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={2}>
-              <Box className={classes.root} >
+              <Box className={classes.side} >
                 {['left'].map((anchor) => (
                   <React.Fragment key={anchor}>
                     <Button onClick={toggleDrawer(anchor, true)}>
@@ -128,9 +140,41 @@ const Studymaterial = () => {
                   </React.Fragment>
                 ))}
               </Box>
+              <Box className={classes.side2}
+                sx={{ width: 'auto' }}
+                role="presentation"
+              >
+                <List>
+                  <ListItem button >
+                    <ListItemIcon>
+                      <SchoolIcon />
+                    </ListItemIcon>
+                    <NavLink className="nav" exact activeClassName="active" to="/studymaterial"><ListItemText primary="Study-Material" /></NavLink>
+                  </ListItem>
+                  {/* {['Study-Material'].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>
+              <SchoolIcon />
+            </ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))} */}
+                </List>
+                <Divider />
+                <List>
+                  {['All Courses', 'Complete Courses', 'Module-wise Courses', 'Chapter-wise Courses', 'Crash Courses'].map((text, index) => (
+                    <ListItem button key={text}>
+                      <ListItemIcon>
+                        <FiberManualRecordTwoToneIcon />
+                      </ListItemIcon>
+                      {index === 0 ? <ListItemText primary={text} onClick={() => setItems(StudymaterialCardIITData)} /> : <ListItemText primary={text} onClick={() => filterSideItem(text)} />}
+                    </ListItem>
+                  ))}
+                </List>
+              </Box>
             </Grid>
             <Grid item xs={12} sm={10}>
-          <h3>IIT-JEE</h3>
+              <h3>IIT-JEE</h3>
               <p className='sm'>One lilner about iit jee would be here ,this contenrt would be added after words accordingly to the requirenments</p>
               <h3>{ctype}</h3>
               <ButtonGroup color="primary" aria-label="medium secondary button group">
