@@ -7,13 +7,16 @@ const Lists = (props) => {
   return (
     <>
       <List>
+       
         <NavLink className='link' to={props.li1link}>
-          <ListItem disablePadding component="a" href={props.li1link}>
-            <ListItemButton>
+          <ListItem disablePadding>
+            <ListItemButton component="a" href={props.li1link}>
               <ListItemText primary={props.li1} />
             </ListItemButton>
           </ListItem>
         </NavLink>
+        
+
         <NavLink className='link' to={props.li2link}>
           <ListItem disablePadding>
             <ListItemButton component="a" href={props.li2link}>

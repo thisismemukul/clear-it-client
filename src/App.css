@@ -31,7 +31,6 @@ p {
     background-color: var(--primary);
 }
 
-span,
 .button {
     color: var(--primary);
 }
@@ -47,7 +46,9 @@ img {
 }
 
 .nav:hover {
+    transition: 0.5s;
     color: var(--primary);
+    text-decoration: underline;
 }
 
 .active {
@@ -55,5 +56,6 @@ img {
 }
 
 .link {
+    color: #ffffff;
     text-decoration: none;
 }

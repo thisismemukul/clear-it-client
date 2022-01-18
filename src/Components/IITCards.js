@@ -3,10 +3,17 @@ import { Card, CardMedia, Typography, CardActions, Button, CardContent, Rating }
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import { makeStyles } from '@mui/styles';
 
+import {  Nav } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
     root: {
         margin: "30px",
         display: "inline-block",
+        "&:hover": {
+            opacity: ".5",
+            transform: "scale(1.1)",
+            transition: "0.5s"
+        },
         [theme.breakpoints.down('md')]: {
             margin: "3px",
         },
@@ -36,7 +43,11 @@ const IITCards = (props) => {
                 <CardActions >
                     <Rating name="read-only" value={props.crate} readOnly />
                     <Button size="small">{props.cprice}</Button>
+                    <Nav.Link>
+                        <NavLink to="/studymaterial">
                     <Button size="small"><ArrowCircleRightIcon sx={{ color: "#FF5166" }} /></Button>
+                        </NavLink>
+                    </Nav.Link>
                 </CardActions>
             </Card>
         </>
