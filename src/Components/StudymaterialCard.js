@@ -10,13 +10,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import { makeStyles } from '@mui/styles';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 
-import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import SkipNextIcon from '@mui/icons-material/SkipNext';
 
 
 const ExpandMore = styled((props) => {
@@ -49,8 +44,6 @@ const useStyles = makeStyles((theme) => ({
 
 
 const StudymaterialCard = (props) => {
-    const theme = useTheme();
-
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
 

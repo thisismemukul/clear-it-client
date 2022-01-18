@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 import logo from '../logo.svg';
 import { UserContext } from "../App";
 import Avatar from '@mui/material/Avatar';
-import { color } from '@mui/system';
 
 const Navbars = () => {
     const { state, dispatch } = useContext(UserContext);
